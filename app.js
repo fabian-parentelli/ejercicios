@@ -160,3 +160,17 @@ function encontrarMaximoYMinimoYSumar(array) {
 const ejemploArray = [1, 2, 3, 4, 56, 7, 8, 10];
 const resultado = encontrarMaximoYMinimoYSumar(ejemploArray);
 console.log(resultado); // Imprimirá el resultado de la suma del máximo y el mínimo.
+
+
+// Otra solución
+
+function maxMin(number) {
+    const result = number.reduce((acc, number) => {
+        if(acc.max < number) acc.max = number;
+        if(acc.min > number) acc.min = number;
+        return acc
+    }, {min: Infinity, max:0});
+    console.log(result.min + result.max);
+};
+
+maxMin([1,2,3,4,56,7,8,10]);
